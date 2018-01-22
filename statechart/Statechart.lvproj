@@ -131,8 +131,10 @@ DirectoryIndex index.htm
 			</Item>
 		</Item>
 		<Item Name="Robot Drive Direct.vi" Type="VI" URL="../../system/Robot Drive Direct.vi"/>
-		<Item Name="State Machine.vi" Type="VI" URL="../State Machine.vi"/>
+		<Item Name="State Machine Engine.vi" Type="VI" URL="../State Machine Engine.vi"/>
+		<Item Name="State Machine Kernel.vi" Type="VI" URL="../State Machine Kernel.vi"/>
 		<Item Name="Statechart.lvsc" Type="LVStatechart" URL="../Statechart.lvsc"/>
+		<Item Name="StatesEnum.ctl" Type="VI" URL="../StatesEnum.ctl"/>
 		<Item Name="Target.vi" Type="VI" URL="../Target.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -221,6 +223,7 @@ DirectoryIndex index.htm
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="niLvFpga_Open_ELVIS RIO CM.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/ELVIS RIO CM/niLvFpga_Open_ELVIS RIO CM.vi"/>
+				<Item Name="niLvFpga_Open_roboRIO.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/roboRIO/niLvFpga_Open_roboRIO.vi"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Parse Scaling Constant Table.vi" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/vis/Parse Scaling Constant Table.vi"/>
 				<Item Name="Reentrant Mutex.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/typedefs/Reentrant Mutex.ctl"/>
