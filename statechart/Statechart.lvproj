@@ -17,7 +17,6 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="DeployTest.vi" Type="VI" URL="../../system/DeployTest.vi"/>
-		<Item Name="Statechart.lvsc" Type="LVStatechart" URL="../Statechart.lvsc"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -62,7 +61,7 @@
 		<Property Name="target.RTTarget.ApplicationPath" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
 		<Property Name="target.RTTarget.EnableFileSharing" Type="Bool">true</Property>
 		<Property Name="target.RTTarget.IPAccess" Type="Str">+*</Property>
-		<Property Name="target.RTTarget.LaunchAppAtBoot" Type="Bool">true</Property>
+		<Property Name="target.RTTarget.LaunchAppAtBoot" Type="Bool">false</Property>
 		<Property Name="target.RTTarget.VIPath" Type="Path">/home/lvuser/natinst/bin</Property>
 		<Property Name="target.server.app.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="target.server.control.propertiesEnabled" Type="Bool">true</Property>
@@ -121,6 +120,9 @@ DirectoryIndex index.htm
 		<Item Name="shared" Type="Folder" URL="../../shared">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="statechart" Type="Folder" URL="..">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Chassis" Type="myRIO Chassis">
 			<Property Name="crio.ProgrammingMode" Type="Str">fpga</Property>
 			<Property Name="crio.ResourceID" Type="Str">RIO0</Property>
@@ -131,11 +133,6 @@ DirectoryIndex index.htm
 			</Item>
 		</Item>
 		<Item Name="Robot Drive Direct.vi" Type="VI" URL="../../system/Robot Drive Direct.vi"/>
-		<Item Name="State Machine Engine.vi" Type="VI" URL="../State Machine Engine.vi"/>
-		<Item Name="State Machine Kernel.vi" Type="VI" URL="../State Machine Kernel.vi"/>
-		<Item Name="Statechart.lvsc" Type="LVStatechart" URL="../Statechart.lvsc"/>
-		<Item Name="StatesEnum.ctl" Type="VI" URL="../StatesEnum.ctl"/>
-		<Item Name="Target.vi" Type="VI" URL="../Target.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Accelerometer Channels Enum.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/myRIO v1.0/Accelerometer/typedefs/Accelerometer Channels Enum.ctl"/>
@@ -263,82 +260,25 @@ DirectoryIndex index.htm
 				<Item Name="VISA Flush IO Buffer Mask.ctl" Type="VI" URL="/&lt;vilib&gt;/Instr/_visa.llb/VISA Flush IO Buffer Mask.ctl"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="Accumulate Distance and Angle.vi" Type="VI" URL="../../iRobot/Sensor/Accumulate Distance and Angle.vi"/>
 			<Item Name="AccumulatingDifferences.vi" Type="VI" URL="../../system/AccumulatingDifferences.vi"/>
+			<Item Name="Bumps + Wheel Drops.ctl" Type="VI" URL="../../iRobot/Sensor/Bumps + Wheel Drops.ctl"/>
+			<Item Name="Buttons.ctl" Type="VI" URL="../../iRobot/Sensor/Buttons.ctl"/>
+			<Item Name="iRobot UART Port Type.ctl" Type="VI" URL="../../iRobot/Advanced/UART/iRobot UART Port Type.ctl"/>
 			<Item Name="KobukiOdometers.vi" Type="VI" URL="../../system/KobukiOdometers.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Poll All Sensors.vi" Type="VI" URL="../../iRobot/Sensor/Polling/Poll All Sensors.vi"/>
 			<Item Name="Poll Robot and Accelerometer.vi" Type="VI" URL="../../system/Poll Robot and Accelerometer.vi"/>
 			<Item Name="rioembeddedcanlvapi.dll" Type="Document" URL="rioembeddedcanlvapi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="RobotOpen.vi" Type="VI" URL="../../system/RobotOpen.vi"/>
 			<Item Name="RobotType.ctl" Type="VI" URL="../../system/RobotType.ctl"/>
+			<Item Name="Sensor Group 6.ctl" Type="VI" URL="../../iRobot/Sensor/Sensor Group 6.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
-			<Item Name="My Real-Time Application" Type="{69A947D5-514E-4E75-818E-69657C0547D8}">
-				<Property Name="App_copyErrors" Type="Bool">true</Property>
-				<Property Name="App_INI_aliasGUID" Type="Str">{E9A6F110-5590-45F2-ACD9-F3BD1F39D526}</Property>
-				<Property Name="App_INI_GUID" Type="Str">{23958D02-B7A8-4899-B3BE-F5F48133F247}</Property>
-				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{C1DCAB5D-02A1-4168-8B49-F601026736F6}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">My Real-Time Application</Property>
-				<Property Name="Bld_compilerOptLevel" Type="Int">0</Property>
-				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/NI_AB_PROJECTNAME/NI_AB_TARGETNAME/My Real-Time Application</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{39E48A91-903A-4B43-AEA7-0BB90478265E}</Property>
-				<Property Name="Bld_targetDestDir" Type="Path">/home/lvuser/natinst/bin</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">startup.rtexe</Property>
-				<Property Name="Destination[0].path" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
-				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">/home/lvuser/natinst/bin/data</Property>
-				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{16A9932D-A079-4CCF-8E42-5D3705E8F2EB}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/myRIO/Target.vi</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/myRIO/Statechart.lvsc</Property>
-				<Property Name="Source[2].Library.atomicCopy" Type="Bool">true</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].type" Type="Str">Library</Property>
-				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/myRIO/Robot Drive Direct.vi</Property>
-				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[3].type" Type="Str">VI</Property>
-				<Property Name="Source[4].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[4].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/myRIO/Kobuki</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">Container</Property>
-				<Property Name="Source[5].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[5].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/myRIO/shared</Property>
-				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[5].type" Type="Str">Container</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">My Real-Time Application</Property>
-				<Property Name="TgtF_internalName" Type="Str">My Real-Time Application</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2017 </Property>
-				<Property Name="TgtF_productName" Type="Str">My Real-Time Application</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{52E36EE1-A15B-459F-A02A-2B2166E670B0}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">startup.rtexe</Property>
-			</Item>
 			<Item Name="My Source Distribution" Type="Source Distribution">
 				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{63FEF5B5-4F56-4A3D-88D3-6BC2B4040775}</Property>
@@ -359,7 +299,7 @@ DirectoryIndex index.htm
 				<Property Name="Source[0].itemID" Type="Str">{DD676DA2-72F8-4E98-9F20-8F4246272ED6}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/myRIO/Target.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref"></Property>
 				<Property Name="Source[1].properties[0].type" Type="Str">Remove front panel</Property>
 				<Property Name="Source[1].properties[0].value" Type="Bool">true</Property>
 				<Property Name="Source[1].properties[1].type" Type="Str">Remove block diagram</Property>
