@@ -262,8 +262,6 @@ DirectoryIndex index.htm
 			</Item>
 			<Item Name="Accumulate Distance and Angle.vi" Type="VI" URL="../../iRobot/Sensor/Accumulate Distance and Angle.vi"/>
 			<Item Name="AccumulatingDifferences.vi" Type="VI" URL="../../system/AccumulatingDifferences.vi"/>
-			<Item Name="Bumps + Wheel Drops.ctl" Type="VI" URL="../../iRobot/Sensor/Bumps + Wheel Drops.ctl"/>
-			<Item Name="Buttons.ctl" Type="VI" URL="../../iRobot/Sensor/Buttons.ctl"/>
 			<Item Name="iRobot UART Port Type.ctl" Type="VI" URL="../../iRobot/Advanced/UART/iRobot UART Port Type.ctl"/>
 			<Item Name="KobukiOdometers.vi" Type="VI" URL="../../system/KobukiOdometers.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
