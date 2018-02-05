@@ -33,7 +33,7 @@
 	</Item>
 	<Item Name="myRIO" Type="RT myRIO">
 		<Property Name="alias.name" Type="Str">myRIO</Property>
-		<Property Name="alias.value" Type="Str">192.168.86.120</Property>
+		<Property Name="alias.value" Type="Str">192.168.86.100</Property>
 		<Property Name="CCSymbols" Type="Str">OS,Linux;CPU,ARM;DeviceCode,762F;TARGET_TYPE,RT;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">762F</Property>
 		<Property Name="crio.family" Type="Str">ARMLinux</Property>
